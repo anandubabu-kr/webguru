@@ -1,21 +1,26 @@
 ---
-
+import Link from "./nav/Link.astro";
+const menuItems = [
+    { path: "/sub/react", title: "React JS" },
+    { path: "/sub/javascript", title: "Javascript" },
+];
 ---
 
-
-<div class="w-full bg-orange-400 px-6 flex justify-between text-white sticky top-0">
-    <h1 class="text-2xl py-2">
-        Web<span>dev</span><span>Guru</span>
+<div
+    class="w-full bg-orange-400 px-6 flex justify-between items-center text-white sticky top-0"
+>
+    <h1 class="text-2xl py-2 font-bold">
+        {"<"}Web<span>dev</span><span> Guru</span>{"/>"}
     </h1>
     <nav class="relative">
-        <menu class="absolute right-0 md:static flex flex-col md:flow-row">
-            <li class=" bg-red-100">
-                <a class=" bg-slate-100 w-full block px-2 py-2" href="/sub/react">React</a>
-            </li>
-            <li class=" bg-red-100">
-                <a class=" bg-slate-100 w-full block px-2 py-2" href="./sub/javascript">Javascript</a>
-            </li>
+        <menu
+            class="debug fixed right-[-40%] sm:static flex flex-col sm:flex-row"
+        >
+            {
+                menuItems.map((item) => (
+                    <Link path={item.path} title={item.title} />
+                ))
+            }
         </menu>
     </nav>
-
 </div>

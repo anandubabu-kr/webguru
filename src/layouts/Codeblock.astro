@@ -1,9 +1,9 @@
 ---
 import Sidebar from "../components/Sidebar.astro";
+const { sub } = Astro.params;
 ---
 
 <main class="flex h-[90vh]">
     <Sidebar />
-    <h1>hey there</h1>
     <slot />
 </main>

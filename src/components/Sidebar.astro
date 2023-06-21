@@ -1,1 +1,36 @@
-<div class="w-1/5 bg-slate-400 h-full">sidebar</div>
+---
+let open = false;
+function toggleSidebar() {
+    console.log("open clicked");
+    open = !open;
+}
+---
+
+<div
+    class={`${
+        open ? "left-[0px]" : "left-[-100%]"
+    } absolute  md:static flex md:left-0 w-1/5 bg-slate-100 h-full border-r p-2 border-orange-600 justify-between flex-col items-center`}
+>
+    <button id="openButton" class="md:hidden m-opener fixed bottom-5 left-5">
+        {">"}
+    </button>
+    <menu>
+        <li>topic</li>
+        <li>topic</li>
+        <li>topic</li>
+        <li>topic</li>
+    </menu>
+    <div>
+        {"<"}
+    </div>
+</div>
+
+<script>
+    let open = false;
+
+    const openButton = document.selectElementById("openButton");
+    openButton.addEventListener(() => {
+        console.log("open clicked");
+        open = !open;
+    });
+</script>

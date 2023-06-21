@@ -14,5 +14,11 @@ const { sub } = Astro.params;
 ---
 
 <Layout title={sub || "404"}>
-  <Codeblock sub={sub}>hello</Codeblock>
+  <Codeblock sub={sub}>
+    <div class="px-4">
+      <h1 class="capitalize text-xl font-bold text-slate-700">
+        {sub}
+      </h1>
+    </div>
+  </Codeblock>
 </Layout>

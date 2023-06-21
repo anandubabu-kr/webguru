@@ -1,0 +1,13 @@
+---
+export interface Props {
+    title: string;
+    path: string;
+}
+const { path, title } = Astro.props;
+---
+
+<li class="">
+    <a class="w-full block px-2 py-2" href={path}>
+        {title}
+    </a>
+</li>
